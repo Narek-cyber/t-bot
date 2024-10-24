@@ -11,14 +11,9 @@ Route::get('/', function () {
 $token = env('TELEGRAM_BOT_API_TOKEN');
 $id = (int)env('TELEGRAM_BOT_ID');
 
-$http = Http::post("https://api.telegram.org/bot$token/sendMessage",
+$http = Http::post("https://api.telegram.org/bot$token/setWebhook",
     [
-        'chat_id' => $id,
-        'text' => 'Hello',
-        'parse_mode' => 'HTML',
-        'reply_markup' => [
-            'remove_keyboard' => true,
-        ],
+        'url' => 'https://t-bot.com/api/webhook',
     ])->json();
 
 dd($http);
