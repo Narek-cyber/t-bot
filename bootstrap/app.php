@@ -4,7 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Support\Facades\Http;
-use Throwable;
+//use Throwable;
 
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -17,7 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        $exceptions->reportable(function (Throwable $e) {
+        $exceptions->reportable(function (\Throwable $e) {
             $text = (string)view('telegram.error', ['e' => $e]);
             $token = env('TELEGRAM_BOT_API_TOKEN');
             $id = (int)env('TELEGRAM_BOT_ID');
