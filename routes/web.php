@@ -17,17 +17,7 @@ $http = Http::post("https://api.telegram.org/bot$token/sendMessage",
         'text' => 'Hello',
         'parse_mode' => 'HTML',
         'reply_markup' => [
-            'keyboard' => [
-                [
-                    [
-                        'text' => 'Third Button'
-                    ],
-                    [
-                        'text' => 'Fourth Button'
-                    ],
-                ]
-            ],
-            'resize_keyboard' => true,
+            'remove_keyboard' => true,
         ],
     ])->json();
 
