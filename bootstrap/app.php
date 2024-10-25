@@ -1,5 +1,6 @@
 <?php
 
+use App\Facades\Telegram;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -22,13 +23,6 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->reportable(function (\Throwable $e) {
             $text = (string)view('telegram.error', ['e' => $e]);
-            $token = env('TELEGRAM_BOT_API_TOKEN');
-            $id = (int)env('TELEGRAM_BOT_ID');
-
-            Http::post("https://api.telegram.org/bot$token/sendMessage", [
-                'chat_id' => $id,
-                'text' => $text,
-                'parse_mode' => 'HTML',
-            ])->json();
+            Telegram::message((int)env('TELEGRAM_BOT_ID'), $text)->send();
         });
     })->create();
