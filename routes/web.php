@@ -11,14 +11,26 @@ Route::get('webhook-data', function() {
     dd(\Illuminate\Support\Facades\Cache::get('webhook-data'));
 });
 
-\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', [
+//\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', [
+//    'inline_keyboard' => [
+//        [
+//            [
+//                'text' => 'Button',
+//                'callback_data' => '13',
+//            ]
+//        ]
+//    ]
+//])->send();
+//dd(\App\Facades\Telegram::message(env('TELEGRAM_BOT_ID'), 'test')->send());
+
+$buttons = [
     'inline_keyboard' => [
         [
             [
                 'text' => 'Button',
-                'callback_data' => '13',
+                'callback_data' => '1',
             ]
         ]
     ]
-])->send();
-//dd(\App\Facades\Telegram::message(env('TELEGRAM_BOT_ID'), 'test')->send());
+];
+\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', $buttons)->send();
