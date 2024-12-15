@@ -21,4 +21,86 @@ bootstrap/app.php
                 ])->json();
         });
 
+-- 2. --
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'inline_keyboard' => [
+                [
+                    [
+                        'text' => 'Button1',
+                        'callback_data' => '1',
+                    ],
+                    [
+                        'text' => 'Button2',
+                        'url' => 'https://www.facebook.com/',
+                    ]
+                ]
+            ]
+        ]
+    ])->json();
+dd($http);
+
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'keyboard' => [
+                [
+                    [
+                        'text' => 'Button1',
+                        'callback_data' => '1',
+                    ],
+                    [
+                        'text' => 'Button2',
+                        'url' => 'https://www.facebook.com/',
+                    ]
+                ]
+            ]
+        ]
+    ])->json();
+dd($http);
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'keyboard' => [
+                [
+                    [
+                        'text' => 'Button1',
+                        'callback_data' => '1',
+                    ],
+                    [
+                        'text' => 'Button2',
+                        'url' => 'https://www.facebook.com/',
+                    ]
+                ]
+            ],
+            'resize_keyboard' => true,
+        ]
+    ])->json();
+dd($http);
+
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'remove_keyboard' => true,
+        ]
+    ])->json();
+dd($http);
+
 
