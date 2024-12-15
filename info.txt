@@ -1,2 +1,38 @@
 https://core.telegram.org/bots/api#available-methods
 https://www.youtube.com/watch?v=1JI0zKrMmic
+
+https://github.com/AV2x/telegram_bot
+
+bothfather
+/newbot
+testbot
+
+idbot
+
+username - test_ns_13_bot
+
+
+Done! Congratulations on your new bot. You will find it at t.me/test_ns_13_bot.
+You can now add a description, about section and profile picture for your bot,
+see /help for a list of commands. By the way, when you've finished creating your cool bot,
+ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+
+
+
+
+
+Hi! Welcome to @username_to_id_bot!
+
+Help: /help
+
+Bot news: @idbotnews
+
+P.S. Your ID: 7884516736
+
+Earn Gems and NOTCOIN! Be the first in Durov Run memecoin-game, dedicated to Pavel Durov 💫
