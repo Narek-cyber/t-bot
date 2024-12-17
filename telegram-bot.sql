@@ -11,7 +11,7 @@
  Target Server Version : 80200
  File Encoding         : 65001
 
- Date: 17/12/2024 15:41:11
+ Date: 18/12/2024 00:24:16
 */
 
 SET NAMES utf8mb4;
@@ -31,9 +31,6 @@ CREATE TABLE `cache`  (
 -- ----------------------------
 -- Records of cache
 -- ----------------------------
-INSERT INTO `cache` VALUES ('a75f3f172bfb296f2e10cbfc6dfc1883', 'i:1;', 1734372229);
-INSERT INTO `cache` VALUES ('a75f3f172bfb296f2e10cbfc6dfc1883:timer', 'i:1734372229;', 1734372229);
-INSERT INTO `cache` VALUES ('webhook-data', 'a:0:{}', 2049732169);
 
 -- ----------------------------
 -- Table structure for cache_locks
@@ -86,11 +83,11 @@ CREATE TABLE `images`  (
 -- ----------------------------
 -- Records of images
 -- ----------------------------
-INSERT INTO `images` VALUES (1, 1, '1.jpg', '2024-12-17 10:42:47', '2024-12-17 10:42:47');
-INSERT INTO `images` VALUES (2, 1, '2.jpg', '2024-12-17 10:42:47', '2024-12-17 10:42:47');
-INSERT INTO `images` VALUES (3, 1, '3.jpg', '2024-12-17 10:42:47', '2024-12-17 10:42:47');
-INSERT INTO `images` VALUES (4, 1, '4.jpg', '2024-12-17 10:42:47', '2024-12-17 10:42:47');
-INSERT INTO `images` VALUES (5, 1, '5.jpg', '2024-12-17 10:42:47', '2024-12-17 10:42:47');
+INSERT INTO `images` VALUES (1, 1, '1.jpg', '2024-12-17 20:08:54', '2024-12-17 20:08:54');
+INSERT INTO `images` VALUES (2, 1, '2.jpg', '2024-12-17 20:08:54', '2024-12-17 20:08:54');
+INSERT INTO `images` VALUES (3, 1, '3.jpg', '2024-12-17 20:08:54', '2024-12-17 20:08:54');
+INSERT INTO `images` VALUES (4, 1, '4.jpg', '2024-12-17 20:08:54', '2024-12-17 20:08:54');
+INSERT INTO `images` VALUES (5, 1, '5.jpg', '2024-12-17 20:08:54', '2024-12-17 20:08:54');
 
 -- ----------------------------
 -- Table structure for job_batches
@@ -143,7 +140,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -151,10 +148,10 @@ CREATE TABLE `migrations`  (
 INSERT INTO `migrations` VALUES (1, '0001_01_01_000000_create_users_table', 1);
 INSERT INTO `migrations` VALUES (2, '0001_01_01_000001_create_cache_table', 1);
 INSERT INTO `migrations` VALUES (3, '0001_01_01_000002_create_jobs_table', 1);
-INSERT INTO `migrations` VALUES (4, '2024_10_24_192756_create_personal_access_tokens_table', 2);
-INSERT INTO `migrations` VALUES (5, '2024_12_17_103045_create_products_table', 2);
-INSERT INTO `migrations` VALUES (6, '2024_12_17_103821_create_images_table', 2);
-INSERT INTO `migrations` VALUES (7, '2024_12_17_103910_create_orders_table', 2);
+INSERT INTO `migrations` VALUES (4, '2024_10_24_192756_create_personal_access_tokens_table', 1);
+INSERT INTO `migrations` VALUES (5, '2024_12_17_103045_create_products_table', 1);
+INSERT INTO `migrations` VALUES (6, '2024_12_17_103821_create_images_table', 1);
+INSERT INTO `migrations` VALUES (7, '2024_12_17_103910_create_orders_table', 1);
 
 -- ----------------------------
 -- Table structure for orders
@@ -232,7 +229,7 @@ CREATE TABLE `products`  (
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES (1, 'Toyota Camry', 'Описание автомобиля', 5000, '2024-12-17 10:42:47', '2024-12-17 10:42:47');
+INSERT INTO `products` VALUES (1, 'Toyota Camry', 'Описание автомобиля', 5000, '2024-12-17 20:08:54', '2024-12-17 20:08:54');
 
 -- ----------------------------
 -- Table structure for sessions
@@ -253,16 +250,9 @@ CREATE TABLE `sessions`  (
 -- ----------------------------
 -- Records of sessions
 -- ----------------------------
-INSERT INTO `sessions` VALUES ('4lissnqegbXksGpI9iBsN1KeMyE1eiSVv1JrtrGO', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiS3lvUTk0c3RkWUNwZXpqOFhadUxMQ09EblFndEdVRmJHV0o1a1hlUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729886596);
-INSERT INTO `sessions` VALUES ('75gaJ3Z8Ge7PLBzrl5f0ImpQfRacMAgUWM9ALXLK', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibzVhczZTSGxCdHRYQXpsTjZhN1BuVmpScVVVNEM3MWxIOTI4TEE0RiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1734350169);
-INSERT INTO `sessions` VALUES ('79sFlqKEIjU2OqxlsOI1z9lusgjBiCV5PiNieNJ5', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV3EyTllnanZlVVZybW8wQUI5VUhZOEp2MG9oV05VM1FTeE52bFltUCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTg6Imh0dHBzOi8vdG0tYm90LmNvbSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1734371771);
-INSERT INTO `sessions` VALUES ('BkTcSWtncvlN6tdA7bMWNtvy4xISIOmpHd0ZU9dw', NULL, '127.0.0.1', 'PostmanRuntime/7.43.0', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoieG81UEg3aWU5RUtuWnVpMlJRdENFd2VHazdhaHgwdFNwcmI2UTVWMCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1734372169);
-INSERT INTO `sessions` VALUES ('K9A9sxUWd8Md9ujiXjknH3JCZHKJMrU8deBHyWXv', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUWJpRUZQMWtDNkg0Z0VERlVzRTNrN1hKRUlCcU8xbU5YWDhTdjlqSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1730319643);
-INSERT INTO `sessions` VALUES ('kFgJtUG74jJtMJ9YxCIozcjvyyiAN38m9fTgDaK8', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQjVYOVVwaEFzZXBUbUJiaVdDVUF6Z2tpZW83bHhZT2ZmWU1yNlpJRiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjQ6Imh0dHBzOi8vdGVsZWdyYW0tYm90LmNvbSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1734371629);
-INSERT INTO `sessions` VALUES ('mnh22iA0yCgWx02QgClx9a6Oz6SppYxZxSMNN7xn', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVVRvTndvQnZFZ21qRkNzWkZFaEhJUk04WUF2eU8zbGFnVFNpejZobSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1729970839);
-INSERT INTO `sessions` VALUES ('Mrc4RimjKrEX1Loy2k6lf8FVWooOGQPtDQ7aEwb0', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWWNZeVRrcEk5dW1ZalFTQW1RSzRueXpWRE5TdUxZN0RYMDdzM1F6YyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9fQ==', 1730056332);
-INSERT INTO `sessions` VALUES ('RlipSMLlAPMgJdYiprZHDlXZt26YpASNaPisg9cT', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibnY1VEd5T2swSmczb09QTGs5bE9IUjE1YXJiSTBVSGJocEduM0gyZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1734387844);
-INSERT INTO `sessions` VALUES ('z93HQfTYRNgJCGmNLvNNYZEhhoCPC2em9pvarVho', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTUFBYTJmalNBMEVmRGpyWnNqYlByOEZtaEFCRmpmTjdGVkZBSE9KMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1734348828);
+INSERT INTO `sessions` VALUES ('C1hlTVkxIFO4dZisTemc2Pu9O70RHC9H4G8RHv9s', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWWlDcTdVc3RyUnhyZEtPMmtTUGc1T2pYUGk5b2dtOEZySXdUanFycSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1734466662);
+INSERT INTO `sessions` VALUES ('hVeJMvKtdzzOtNR39fKZzlrhJkHJZh3fh6Bp3LQi', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUEtTSWsyQlVWak1CVEtOQUpFUEQ0NHBXVUU4RmVPTVVmUlZyc2hMMyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1734466709);
+INSERT INTO `sessions` VALUES ('RNmNfJ6OkDHrhIjtVWhZsy4Mvu1Zw1WsmAJYL8CP', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTHBkVnQyNlVPMTBoUEsxbjJaUmxHMFVpM0EzSFVpdWNqUjhMcXdIRSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTc6Imh0dHBzOi8vdC1ib3QuY29tIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1734466165);
 
 -- ----------------------------
 -- Table structure for users
@@ -271,9 +261,13 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telegram_id` bigint NULL DEFAULT NULL,
+  `telegram_username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `telegram_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -284,5 +278,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+INSERT INTO `users` VALUES (1, 'John', NULL, NULL, '$2y$12$4Cdjg4JU6CKHtq3drtZVzOeAKOXJiciUJmYqlhWWLmTKDStxiiWGe', 7884516736, NULL, NULL, NULL, NULL, '2024-12-17 20:15:37', '2024-12-17 20:18:29');
 
 SET FOREIGN_KEY_CHECKS = 1;
