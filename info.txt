@@ -36,3 +36,167 @@ Bot news: @idbotnews
 P.S. Your ID: 7884516736
 
 Earn Gems and NOTCOIN! Be the first in Durov Run memecoin-game, dedicated to Pavel Durov 💫
+
+https://www.youtube.com/watch?v=1JI0zKrMmic
+https://github.com/AV2x/telegram_bot/tree/auto
+https://github.com/AV2x/telegram_bot
+
+
+-- 1. --
+web.php
+
+dd(\Illuminate\Support\Facades\Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test message',
+    ])->json()
+);
+
+bootstrap/app.php
+
+    ->withExceptions(function (Exceptions $exceptions) {
+        $exceptions->reportable(function (Throwable $e) {
+            $text = (string) view('telegram.error', ['e' => $e]);
+            Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+                [
+                    'chat_id' => 7884516736,
+                    'text' => $text,
+                    'parse_mode' => 'HTML',
+                ])->json();
+        });
+
+-- 2. --
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'inline_keyboard' => [
+                [
+                    [
+                        'text' => 'Button1',
+                        'callback_data' => '1',
+                    ],
+                    [
+                        'text' => 'Button2',
+                        'url' => 'https://www.facebook.com/',
+                    ]
+                ]
+            ]
+        ]
+    ])->json();
+dd($http);
+
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'keyboard' => [
+                [
+                    [
+                        'text' => 'Button1',
+                        'callback_data' => '1',
+                    ],
+                    [
+                        'text' => 'Button2',
+                        'url' => 'https://www.facebook.com/',
+                    ]
+                ]
+            ]
+        ]
+    ])->json();
+dd($http);
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'keyboard' => [
+                [
+                    [
+                        'text' => 'Button1',
+                        'callback_data' => '1',
+                    ],
+                    [
+                        'text' => 'Button2',
+                        'url' => 'https://www.facebook.com/',
+                    ]
+                ]
+            ],
+            'resize_keyboard' => true,
+        ]
+    ])->json();
+dd($http);
+
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/sendMessage',
+    [
+        'chat_id' => 7884516736,
+        'text' => 'test',
+        'parse_mode' => 'HTML',
+        'reply_markup' => [
+            'remove_keyboard' => true,
+        ]
+    ])->json();
+dd($http);
+
+-- 3. --
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/setWebhook',
+    [
+        'url' => 'https://t-bot.com/api/webhook',
+    ])->json();
+dd($http);
+
+$http = Http::post('https://api.telegram.org/bot8144975184:AAF18SNkPKqyusmmoIIJnSjvsk18Rfs6oec/getWebhookInfo')->json();
+
+
+Route::get('webhook-data', function () {
+    dd(\Illuminate\Support\Facades\Cache::get('webhook-data'));
+});
+
+-- 4. --
+\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', [
+    'inline_keyboard' => [
+        [
+            [
+                'text' => 'Button',
+                'callback_data' => '13',
+            ]
+        ]
+    ]
+])->send();
+\App\Facades\Telegram::message(env('TELEGRAM_BOT_ID'), 'test')->send();
+
+$buttons = [
+    'inline_keyboard' => [
+        [
+            [
+                'text' => 'Button',
+                'callback_data' => '1',
+            ]
+        ]
+    ]
+];
+\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', $buttons)->send();
+
+-- 5. --
+\App\Telegram\Helpers\InlineButton::add('Test Button1', 'Test', ['number' => 1], 1);
+\App\Telegram\Helpers\InlineButton::link('Test Button2', 'https://t-bot.com/');
+\App\Telegram\Helpers\InlineButton::add('Test Button3', 'Test', ['number' => 3], 2);
+dd(\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', \App\Telegram\Helpers\InlineButton::$buttons)->send());
+
+
+\App\Telegram\Helpers\KeyboardButton::add('Test Button');
+\App\Telegram\Helpers\KeyboardButton::add('Test Button1');
+dd(\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', \App\Telegram\Helpers\KeyboardButton::$buttons)->send());
+
+\App\Telegram\Helpers\KeyboardButton::remove();
+dd(\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', \App\Telegram\Helpers\KeyboardButton::$buttons)->send());
+

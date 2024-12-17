@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class Realization
 {
     protected const Commands = [
-        '/start' => Start::class,
+        '/start' => Start::class
     ];
 
     public function take(Request $request)
@@ -18,6 +18,15 @@ class Realization
                 $command_name = explode(' ', $request->input('message')['text'])[0];
                 return self::Commands[$command_name];
             }
+        } elseif ($request->input('callback_query')) {
+            $data = json_decode($request->input('callback_query')['data']);
+            return '\App\Telegram\Webhook\Actions\\' . $data->action;
+        } elseif (isset($request->input('message')['photo'])) {
+            return Photo::class;
+        } elseif (isset($request->input('message')['document'])) {
+            return Document::class;
+        } elseif ($request->input('message')) {
+            return Text::class;
         }
         return false;
     }
