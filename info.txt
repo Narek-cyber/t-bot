@@ -41,6 +41,9 @@ https://www.youtube.com/watch?v=1JI0zKrMmic
 https://github.com/AV2x/telegram_bot/tree/auto
 https://github.com/AV2x/telegram_bot
 
+https://core.telegram.org/bots/api#deletewebhook
+https://core.telegram.org/widgets/login
+
 
 -- 1. --
 web.php
@@ -199,4 +202,13 @@ dd(\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', \App\Telegram\
 
 \App\Telegram\Helpers\KeyboardButton::remove();
 dd(\App\Facades\Telegram::buttons(env('TELEGRAM_BOT_ID'), 'test', \App\Telegram\Helpers\KeyboardButton::$buttons)->send());
+
+-- 6. --
+$fileContent = Storage::disk('public')->get('telegram/cars/1.webp');
+dd(\App\Facades\Telegram::document(7884516736, $fileContent, '1.webp')->send());
+
+$fileContent = Storage::disk('public')->get('telegram/cars/1.webp');
+dd(\App\Facades\Telegram::photo(7884516736, $fileContent, '1.webp')->send());
+
+
 

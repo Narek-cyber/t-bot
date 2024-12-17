@@ -3,6 +3,9 @@
 namespace App\Telegram\Webhook;
 
 use App\Telegram\Webhook\Commands\Start;
+use App\Telegram\Webhook\Documents\Document;
+use App\Telegram\Webhook\Photo\Photo;
+use App\Telegram\Webhook\Text\Text;
 use Illuminate\Http\Request;
 
 class Realization

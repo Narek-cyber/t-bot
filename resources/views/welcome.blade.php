@@ -172,5 +172,6 @@
                 </div>
             </div>
         </div>
+        <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="test_ns_13_bot" data-size="large" data-auth-url="https://t-bot.com/api/authenticate" data-request-access="write"></script>
     </body>
 </html>
